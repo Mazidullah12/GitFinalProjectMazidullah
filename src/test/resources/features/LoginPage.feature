@@ -1,5 +1,5 @@
 
-@Regression @Smoke
+@Regression @1
 Feature: Navigate Login page by clicking
 
   Scenario: Navigate to login page

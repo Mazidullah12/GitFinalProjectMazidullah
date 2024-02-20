@@ -1,4 +1,4 @@
-@Smoke
+@Smoke @Regression
 Feature: Navigate to Home Page
 
   Scenario: Home Page Validation.

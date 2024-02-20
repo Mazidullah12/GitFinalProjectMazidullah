@@ -8,12 +8,12 @@ public class Hooks extends SeleniumUtilities {
 
     @Before
     public void beforeScenarios() {
-        SetupBrowser();
+        setupBrowser();
     }
 
     @After
     public void AfterScenarios() {
-    CloseBrowser();
+        quitBrowser();
     }
 
 }

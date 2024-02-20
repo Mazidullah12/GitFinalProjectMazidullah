@@ -9,11 +9,7 @@ import org.junit.Assert;
 
 public class HomepageSteps extends SeleniumUtilities {
 
-    @Given("Open a browser and navigate to Tek Insurance App")
-    public void OpenBrowser(){
-    SetupBrowser();
 
-    }
 @Then("validate title on the top left corner")
 public void OpenBrowserAndNavigate(){
      String actualTitle = getElementText(homePage.HOME_PAGE_TITLE);
@@ -21,11 +17,6 @@ public void OpenBrowserAndNavigate(){
      Assert.assertEquals("TEK Insurance App", actualTitle);
 }
 
-
-    @Then("Quit browser")
-    public void QuitBrowser(){
-        driver.quit();
-    }
 
     @Then("create Primary Account is enabled")
     public void validationCreatePrimaryAccountEnabled(){

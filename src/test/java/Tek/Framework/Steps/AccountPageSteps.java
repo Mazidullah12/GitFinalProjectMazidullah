@@ -1,28 +1,55 @@
 package Tek.Framework.Steps;
 
-import Tek.Framework.Pages.AccountPage;
-import Tek.Framework.Pages.CreateAccountPage;
+import Tek.Framework.Pages.accountPage;
 import Tek.Framework.Utility.SeleniumUtilities;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class AccountPageSteps extends SeleniumUtilities {
 
-    @When("click on account page")
-    public void clickOnAccountLink() {
-        clickOnElement(AccountPage.ACCOUNTS_LINK);
-
-    }
-    @Then("validate card title to be {string}")
-    public void validateCardTitleToBe(String expectedCardTitle) {
-        String actualCardTitle = getElementText(AccountPage.ACCOUNT_CARD_TITLE);
-        Assert.assertEquals(expectedCardTitle,actualCardTitle);
-
-    }
-    @When("change items per page to {string}")
-    public void changeItemsPerPageTo(String itemPerPage) {
-        sendText(AccountPage.ITEM_PER_PAGE_SELECT, itemPerPage);
+    @And("Click on Accounts Button")
+    public void clickOnAccountsButton(){
+        clickOnElement(accountPage.ACCOUNTS_BUTTON);
     }
 
+    @And("Verify the presence of all 5 rows")
+    public void VerifyThePresenceOfAllFiveRows() {
+        List<WebElement> rows = getDriver().findElements(accountPage.All_ROWS);
+        assertEquals(5, rows.size());
+        for (WebElement row : rows) {
+            assertTrue(row.isDisplayed());
+        }
+    }
+
+    @Then("all five rows should be present")
+    public void allFiveRowsShouldBePresent() {
+        List<WebElement> rows = getDriver().findElements(accountPage.All_ROWS);
+        assertEquals("Expected exactly 5 rows", 5, rows.size());
+        for (WebElement row : rows) {
+            assertTrue("Row is not displayed", row.isDisplayed());
+        }
+    }
+
+    @Then("Select Show {string} from page per show dropdown")
+    public void clickPagerPerShow(String Num) {
+        WebElement element= getDriver().findElement(accountPage.PageShow);
+        Select select= new Select(element);
+        select.selectByVisibleText(Num);
+    }
+
+    @Then("Verify the presence of all {string} per page")
+    public void verifyThePresenceOfAllPerPage(String visibleRows) {
+        int expectedRowCount = Integer.parseInt(visibleRows);
+        List<WebElement> rows = getDriver().findElements(accountPage.All_ROWS);
+        assertEquals("Unexpected number of rows", expectedRowCount, rows.size());
+    }
 }
+
+

@@ -1,17 +1,25 @@
+
 @Regression
-Feature: Testing CSR Primary Account Section
-  Background: Login with CSR Credentials
-    When click on login button
-    Then enter userName "supervisor" and password "tek_supervisor"
+Feature: Account page validation
+
+  Background:
+    Given click on login button
+    When enter userName "supervisor" and password "tek_supervisor"
     And click on Sign In Button
-    When click on account page
+    And Click on Accounts Button
 
 
-  Scenario: Navigate to Customer Service Portal with valid CSR credentials and navigate to Accounts verify 5 row
-  /page is default
-    Then validate card title to be "Primary Accounts"
-    Then validate table row count to be 5
+  Scenario: Verify 5 row page is default.
+    And Verify the presence of all 5 rows
+    Then all five rows should be present
 
 
-  Scenario: Navigate to Customer Service Portal with valid CSR credentials.
-    When change items per page to "50"
+  Scenario Outline: Customer Service Portal - Accounts change show per page to
+    Then Select Show "<Page per show>" from page per show dropdown
+    Then Verify the presence of all "<Visible Rows>" per page
+
+    Examples:
+      |Page per show|Visible Rows |
+      |Show 10      |10           |
+      |Show 25      |25           |
+      |Show 50      |50           |

@@ -1,20 +1,28 @@
-@Regression
-Feature: Create Primary Account Functionality tests
+
+@Regression @Smoke
+Feature: Create Account functionality
 
   Background:
-    When Click on Create Primary Account button
-    Then Fill up the form "mazidullah20@gmail.com" "Mr" "Mazidullah" "Hafizi" "Male" "Single" "Student" "01/01/1996"
-    And click on create Account Button
-
-  Scenario: Validate title button
-    When Click on Create Primary Account button
-    Then validate title on the top
-
-    Scenario:Create valid new account
-      And validate user navigate to sign up your account page
-      And validate email address "mazidullah15@gmail.com" shows as expected
+    Given Click on Create Primary Account button
 
 
-   Scenario: Error massage show as expected
-     And validate error massage shows as expected
+  Scenario: Create Account form page validate Form Title as Expected
+    Then Validate Create Primary Account Holder is exist
 
+
+  Scenario: Creating an Account on the Primary Account Holder
+    When Fill Create Account form "Mazidkhan@gmail.com" "Mazidullah" "Student" "Hafizi" "01/01/1996"
+    And Select Gender "Male"
+    And Select Title "Mr."
+    And Select Marital Status "Single"
+    And Click on Create Account Button
+    Then Validate "random@gmail.com" on Sign up Page shows as expected
+
+
+  Scenario: Create account with existing email address and validate error message
+    When Fill Create Account form "Mazidkhan@gmail.com" "Mazidullah" "Student" "Hafizi" "01/01/1996"
+    And Select Gender "Male"
+    And Select Title "Mr."
+    And Select Marital Status "Single"
+    And Click on Create Account Button
+    Then Validate error message "ERROR Account with email Mazidkhan@gmail.com is exist"

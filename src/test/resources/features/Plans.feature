@@ -1,4 +1,4 @@
-@Smoke
+@Smoke @Regression
 Feature: Validate the presence of 4 rows of data on the Plans page
 
   Background: Login with CSR Credentials

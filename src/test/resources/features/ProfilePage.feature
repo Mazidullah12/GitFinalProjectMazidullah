@@ -1,4 +1,4 @@
-@S
+@S @Regression
 Feature: Validate information on the profile page
 
   Background:
@@ -18,5 +18,6 @@ Feature: Validate information on the profile page
 
     Scenario: Validate Logout button functionality
       And click on Logout button
+      Then validate title on the top left corner
 
 
