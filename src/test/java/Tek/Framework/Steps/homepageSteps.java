@@ -1,13 +1,12 @@
 package Tek.Framework.Steps;
 
 import Tek.Framework.Pages.homePage;
-import Tek.Framework.Utility.SeleniumUtilities;
-import io.cucumber.java.en.Given;
+import Tek.Framework.Utility.seleniumUtilities;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class HomepageSteps extends SeleniumUtilities {
+public class homepageSteps extends seleniumUtilities {
 
 
 @Then("validate title on the top left corner")

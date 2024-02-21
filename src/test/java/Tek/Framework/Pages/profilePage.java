@@ -2,7 +2,7 @@ package Tek.Framework.Pages;
 
 import org.openqa.selenium.By;
 
-public class ProfilePage {
+public class profilePage {
 
     public static final By CLICK_PROFILE = By.xpath("//button[@class='chakra-button chakra-button css-1lzp9bh']");
     public static final By STATUS = By.xpath("//span[@class='css-1ny2kle']");

@@ -1,6 +1,6 @@
 package Tek.Framework.Utility;
 
-import Tek.Framework.Base.BaseSetup;
+import Tek.Framework.Base.baseSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.List;
 
-public class SeleniumUtilities extends BaseSetup {
+public class seleniumUtilities extends baseSetup {
 
     private WebDriverWait getWait() {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(10));

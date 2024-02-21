@@ -2,7 +2,7 @@ package Tek.Framework.Pages;
 
 import org.openqa.selenium.By;
 
-public class LoginPage {
+public class loginPage {
 
     public static final By LOGIN_BUTTON = By.xpath("//a[@class='chakra-button css-ez23ye']");
     public static final By USER_NAME = By.name("username");

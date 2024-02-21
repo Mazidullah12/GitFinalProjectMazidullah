@@ -13,5 +13,5 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber_report/report.html"
         }
 )
-public class TestRunner {
+public class testRunner {
 }

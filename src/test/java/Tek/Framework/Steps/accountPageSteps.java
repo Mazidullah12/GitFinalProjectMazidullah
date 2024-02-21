@@ -1,7 +1,7 @@
 package Tek.Framework.Steps;
 
 import Tek.Framework.Pages.accountPage;
-import Tek.Framework.Utility.SeleniumUtilities;
+import Tek.Framework.Utility.seleniumUtilities;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class AccountPageSteps extends SeleniumUtilities {
+public class accountPageSteps extends seleniumUtilities {
 
     @And("Click on Accounts Button")
     public void clickOnAccountsButton(){

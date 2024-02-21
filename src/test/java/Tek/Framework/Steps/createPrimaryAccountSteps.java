@@ -1,14 +1,13 @@
 package Tek.Framework.Steps;
 
 import Tek.Framework.Pages.CreateAccountPage;
-import Tek.Framework.Pages.homePage;
-import Tek.Framework.Utility.SeleniumUtilities;
+import Tek.Framework.Utility.seleniumUtilities;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class CreatePrimaryAccountSteps extends SeleniumUtilities {
+public class createPrimaryAccountSteps extends seleniumUtilities {
 
 
     @Then("Validate Create Primary Account Holder is exist")
